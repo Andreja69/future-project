@@ -1,0 +1,55 @@
+project clone facebook
+
+1. register:
+-User moze da se registruje /napravisvojprofil;
+-validacija podataka kroz html I php;
+-password I confirm password;
+-password je zasticen u db-u;
+-admin se kreira u bazi;
+
+2. Logi-in:
+-napraviti log-in formu;
+-pri logovanju dobija se povratna informacija o uspesnom logovanju
+-status da je user logovan je uvek vidljiv i postoji log out button;
+
+3. Obrada profila:
+-user moze da pregleda i da edituje svoje podatke;
+-lozinka se menja tako sto se unese stara;
+
+4.friend requests:
+-mogucniost prikaza svih prijatelja;
+-prijem i slanje sahteva za priojateljstvo;
+-zahtevi za prijateljstvo jasno vidljivi;
+-unfriend opcija;
+
+5.postovi:
+-postovi jasno vidljivi sa lajkovima i komentarima;
+-postovi se vide on najnovijeg ka najstarijem
+-uz post ide ime autora i datum
+-user moze da obrise i edituje svoj post
+
+6. file upload;
+-mogu da se upload slike;
+-slike su pravilno uparene sa autorom i postom;
+-slike se cuvaju na serveru u svom folderu;
+BONUS:
+-slike mogu da se taguju
+
+7.obrada postova i pretraga:
+-filtriranje postova po kategorijama;
+-lajkovi I disliajkovi su ikonice;
+BONUS:
+-pretraga komentara slika i postava
+
+8.objavljivanje postova:
+-postovi mogu da se objavljuju kao public, private, friends
+-postovi mogu da se edituju
+
+9. prihatne poruke:
+-napraviti messaging interface sa inbox delom;
+-poslate poruke idu u sent;
+-nove poruke su highlightovane;
+-poruke koje su procitane su oznacene kao procitane;
+
+
+
