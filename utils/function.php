@@ -7,7 +7,8 @@ function isLogedIn(){
     }
 }
 
-function view($path){
+function view($path, $data = []){
+    extract($data);
     require "../views/".$path.".view.php";
 }
 

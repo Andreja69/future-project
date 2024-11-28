@@ -66,7 +66,8 @@
 
         <div class="card bg-glass">
           <div class="card-body px-4 py-5 px-md-5">
-            <form>
+
+            <form action="/register" method="POST">
               <!-- 2 column grid layout with text inputs for the first and last names -->
               <div class="row">
                 <div class="col-md-6 mb-4">
@@ -98,6 +99,7 @@
                        <div data-mdb-input-init class="form-outline mb-4">
                 <input type="password" id="form3Example5" name="confirm_password" class="form-control" />
                 <label class="form-label" for="form3Example4">Confirm Password</label>
+                  <p class="text-danger"><?= $password_err ?? "" ?></p>
               </div>
 
 
