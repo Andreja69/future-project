@@ -24,7 +24,10 @@
           </ul>
         </li>
         <li class="nav-item">
-          <a class="nav-link disabled" aria-disabled="true">Disabled</a>
+          <a href="/logout" class="nav-link text-danger" >Log out</a>
+        </li>
+                  <li class="nav-item">
+          <a href="/dashboard" class="nav-link text-primary" >Dashboard</a>
         </li>
       </ul>
       <form class="d-flex" role="search">

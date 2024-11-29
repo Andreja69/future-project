@@ -14,8 +14,9 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
     }
     if(count($errors_array) == 0 ){
         $id = $db->registerUser($first_name, $last_name, $email, $password, $user_name);
-        header("location: /dashboard");
+        $_SESSION['user_id'] = $id;
 
+        header("location: /");
         exit();
     }
 //    extract($_POST);

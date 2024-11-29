@@ -14,22 +14,22 @@
                   <h4 class="mt-1 mb-5 pb-1">We are The Lotus Team</h4>
                 </div>
 
-                <form>
+                <form action="/login" method="POST">
                   <p>Please login to your account</p>
 
                   <div data-mdb-input-init class="form-outline mb-4">
-                    <input type="email" id="form2Example11" class="form-control"
-                      placeholder="Phone number or email address" />
-                    <label class="form-label" for="form2Example11">Username</label>
+                    <input name="email" type="email" id="form2Example11" class="form-control"
+                      placeholder="Email"/>
+                    <label class="form-label" for="form2Example11">Email</label>
                   </div>
 
                   <div data-mdb-input-init class="form-outline mb-4">
-                    <input type="password" id="form2Example22" class="form-control" />
+                    <input name="password" type="password" id="form2Example22" class="form-control" placeholder="Password"/>
                     <label class="form-label" for="form2Example22">Password</label>
                   </div>
 
                   <div class="text-center pt-1 mb-5 pb-1">
-                    <button data-mdb-button-init data-mdb-ripple-init class="btn btn-primary btn-block fa-lg gradient-custom-2 mb-3" type="button">Log
+                    <button data-mdb-button-init data-mdb-ripple-init class="btn btn-primary btn-block fa-lg gradient-custom-2 mb-3" type="submit">Log
                       in</button>
 
                   </div>
