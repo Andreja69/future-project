@@ -363,16 +363,31 @@
                     <h1 class="h3 mb-4 text-gray-800">Blank Page</h1>
                     <div class="row">
                         <div class="col-8 offset-1" >
-                            <form action="/change/password" method="POST">
+                            <ul class="list-group">
+                                <li class="list-group-item d-flex justify-content-between align-items-center"><span> First name : <strong><?= $user->first_name ?></strong> </span><a class="btn btn-primary "
+                                            href="/change/firstname">Change</a></li>
 
-                                <input type="password" placeholder="Enter existing password" name="old_password" class="form-control"><br>
-                                 <p class="text-danger"><?= $error ?? "" ?></p>
+                                  <li class="list-group-item d-flex justify-content-between align-items-center"><span> Last name : <strong><?= $user->last_name ?></strong> </span><a class="btn btn-primary "
+                                            href="/change/lastname">Change</a></li>
 
-                                <input type="password" placeholder="Enter new password" name="new_password" class="form-control"><br>
+                                  <li class="list-group-item d-flex justify-content-between align-items-center"><span> Email  : <strong><?= $user->email ?></strong> </span><a class="btn btn-primary "
+                                            href="/change/email">Change</a></li>
 
-                                <button type="submit" class="btn btn-primary">Save</button>
+                                  <li class="list-group-item d-flex justify-content-between align-items-center"><span> User name : <strong><?= $user->user_name ?></strong> </span><a class="btn btn-primary "
+                                            href="/change/username">Change</a></li>
 
-                            </form>
+                                <li class="list-group-item d-flex justify-content-between align-items-center"><span> Created At : <strong><?= date( "Y/m/d",strtotime($user->created_at) )  ?></strong> </span></li>
+                                <?php  if(isset($user->updated_at) ) :?>
+                                    <li class="list-group-item d-flex justify-content-between align-items-center"><span> Updated At : <strong><?= date( "Y/m/d",strtotime($user->updated_at) )  ?></strong> </span></li>
+                                <?php endif ?>
+
+
+
+
+                                  <li class="list-group-item d-flex justify-content-between align-items-center"><a class="btn btn-danger"
+                                              href="/change/password">Change Password</a></li>
+
+                            </ul>
                         </div>
                     </div>
                 </div>

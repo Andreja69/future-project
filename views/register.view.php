@@ -72,34 +72,45 @@
               <div class="row">
                 <div class="col-md-6 mb-4">
                   <div data-mdb-input-init class="form-outline">
-                    <input type="text" id="form3Example1" name="first_name" class="form-control" />
+                    <input type="text" id="form3Example1" name="first_name" class="form-control" value="<?= $first_name ?? '' ?>"/>
                     <label class="form-label" for="form3Example1">First name</label>
+                  <p class="text-danger"><?= $first_name_err ?? "" ?></p>
+
                   </div>
                 </div>
                 <div class="col-md-6 mb-4">
                   <div data-mdb-input-init class="form-outline">
-                    <input type="text" id="form3Example2" name="last_name" class="form-control" />
+                    <input type="text" id="form3Example2" name="last_name" class="form-control" value="<?= $last_name ?? '' ?>"/>
                     <label class="form-label" for="form3Example2">Last name</label>
+                     <p class="text-danger"><?= $last_name_err ?? "" ?></p>
+
                   </div>
                 </div>
               </div>
 
               <!-- Email input -->
               <div data-mdb-input-init class="form-outline mb-4">
-                <input type="email" id="form3Example3" name="email" class="form-control" />
+                <input type="email" id="form3Example3" name="email" class="form-control"value="<?= $email ?? '' ?>" />
                 <label class="form-label" for="form3Example3">Email address</label>
+                  <p class="text-danger"><?= $email_err ?? "" ?></p>
+
               </div>
 
               <!-- Password input -->
               <div data-mdb-input-init class="form-outline mb-4">
                 <input type="password" id="form3Example4" name="password" class="form-control" />
                 <label class="form-label" for="form3Example4">Password</label>
+                  <p class="text-danger"><?= $password_err ?? "" ?></p>
+
               </div>
 
                        <div data-mdb-input-init class="form-outline mb-4">
                 <input type="password" id="form3Example5" name="confirm_password" class="form-control" />
                 <label class="form-label" for="form3Example4">Confirm Password</label>
-                  <p class="text-danger"><?= $password_err ?? "" ?></p>
+                  <p class="text-danger"><?= $confirm_password_err ?? "" ?></p>
+                  <p class="text-danger"><?= $password_match_err ?? "" ?></p>
+                           <p class="text-danger"><?= $account_exist_err ?? "" ?></p>
+
               </div>
 
 

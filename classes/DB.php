@@ -53,6 +53,83 @@ class DB{
         }
     }
 
+    public function isUserFound($email)
+    {
+        $stmt = $this->pdo->prepare("SELECT * FROM users WHERE email = ?");
+        $stmt->execute([ $email]);
+        return $stmt->rowCount();
+    }
+
+    public function changeFirstName( $firstname,$id)
+    {
+        $stmt = $this->pdo->prepare("UPDATE users SET first_name = ? , updated_at = NOW()  WHERE id = ?");
+        $stmt->execute([ $firstname,$id ]);
+
+        return $stmt->rowCount();
+
+    }
+
+    public function changeLastName( $lastname, $id)
+    {
+        $stmt = $this->pdo->prepare("UPDATE users SET last_name = ? , updated_at = NOW()  WHERE id = ?");
+        $stmt->execute([$lastname,$id]);
+        return $stmt->rowCount();
+    }
+
+    public function changeEmail( $email, $id)
+    {
+        $stmt = $this->pdo->prepare("UPDATE users SET email = ? , updated_at = NOW()  WHERE id = ?");
+        $stmt->execute([$email,$id]);
+        return $stmt->rowCount();
+    }
+
+    public function changeUserName( $username, $id)
+    {
+        $stmt = $this->pdo->prepare("UPDATE users SET user_name = ? , updated_at = NOW()  WHERE id = ?");
+        $stmt->execute([$username,$id]);
+        return $stmt->rowCount();
+    }
+
+    public function isPasswordCorrect($old_password, $id)
+    {
+        $stmt = $this->pdo->prepare("SELECT * FROM users WHERE id = ?");
+        $stmt->execute([$id]);
+        $user = $stmt->fetch(pdo::FETCH_OBJ);
+        if(isset($user)) {
+            if(password_verify($old_password, $user->password)) {
+            return 1;
+
+            }else{
+                return 0;
+            }
+        }else{
+            return 0;
+        }
+
+    }
+
+    public function changePassword( $new_password, $id)
+    {
+        $stmt = $this->pdo->prepare("UPDATE users SET password = ? , updated_at = NOW()  WHERE id = ?");
+        $stmt->execute([password_hash($new_password, PASSWORD_DEFAULT),$id]);
+        return $stmt->rowCount();
+    }
+
+    public function findUsersByEmail( $email)
+    {
+        $stmt = $this->pdo->prepare("SELECT id, email, first_name
+FROM users u
+WHERE u.email LIKE ?
+AND u.id NOT IN (
+    SELECT receiver_id
+    FROM friends_requests
+    WHERE sender_id = ? AND state = 'pending'
+)
+AND u.id != ?;
+");
+        $stmt->execute(["%".$email."%", $_SESSION['user_id'],$_SESSION['user_id']]);
+        return $stmt->fetchAll(PDO::FETCH_OBJ);
+    }
 
 }
 
