@@ -131,5 +131,12 @@ AND u.id != ?;
         return $stmt->fetchAll(PDO::FETCH_OBJ);
     }
 
+    public function getAllCategories()
+    {
+        $stmt = $this->pdo->prepare("SELECT * FROM categories");
+        $stmt->execute();
+        return $stmt->fetchAll(PDO::FETCH_OBJ);
+    }
+
 }
 

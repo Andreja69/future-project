@@ -14,10 +14,13 @@ $routes = [
     "/change/username" =>"user/ChangeusernameController",
     "/change/password" =>"user/ChangepasswordController",
     "/user/friendrequest" =>"user/FriendrequestController",
+    "/user/unfriend" =>"user/UnfriendController",
+    "/user/create-post" =>"user/CreatepostController",
     "/accept" =>"user/AcceptController",
     "/API" => "API/searchUsers",
 
 
 ];
 
+//call_user_func()
 //$route->get("/user", "User@destroy")->auth

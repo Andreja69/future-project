@@ -20,3 +20,12 @@ border-top-right-radius: .3rem;
 border-bottom-right-radius: .3rem;
 }
 }
+
+.description{
+     width: 80%;
+    height: 3em; /* Ovdje postavite željenu visinu */
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 2; /* Broj redova */
+    -webkit-box-orient: vertical;
+}

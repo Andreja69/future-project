@@ -36,14 +36,22 @@ class Friends{
     {
         $stmt = $this->pdo->prepare("SELECT fr.id, fr.sender_id, fr.receiver_id, fr.state, u.id as user_id, u.first_name, u.last_name, u.email
         FROM friends_requests fr 
-        JOIN users u ON fr.sender_id = u.id
-        WHERE fr.receiver_id = ? AND fr.state = 'accepted'
+        JOIN users u ON (fr.sender_id = u.id OR fr.receiver_id = u.id)
+        WHERE (fr.receiver_id = ? OR fr.sender_id = ?)
+          AND fr.state = 'accepted'
+            AND u.id != ?
         ");
-        $stmt->execute([$user_id]);
-
+        $stmt->execute([$user_id, $user_id,$user_id]);
         return $stmt->fetchAll(PDO::FETCH_OBJ);
+    }
+
+    public function unfriend($request_id)
+    {
+        $stmt = $this->pdo->prepare("UPDATE friends_requests SET state = 'rejected' WHERE id = ?");
+        $stmt->execute([$request_id]);
+        return $stmt->rowCount();
+
     }
 
 
 }
-

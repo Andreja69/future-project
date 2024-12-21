@@ -45,7 +45,7 @@ BONUS:
 -postovi mogu da se objavljuju kao public, private, friends
 -postovi mogu da se edituju
 
-9. prihatne poruke:
+9. privatne poruke:
 -napraviti messaging interface sa inbox delom;
 -poslate poruke idu u sent;
 -nove poruke su highlightovane;

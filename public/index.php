@@ -6,4 +6,8 @@
 //cas49
 //cas50
 //cas51
+//cas52
+//cas55
+//cas56
+//cas57
 require "../core/init.php";
